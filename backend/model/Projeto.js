@@ -23,7 +23,7 @@ const projetoSchema = new Schema({
         required: true,
     },
     data_envio: {
-        type: Date,
+        type: String,
         required: true,
     },
 },{ timestamps: true});

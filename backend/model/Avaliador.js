@@ -34,5 +34,5 @@ const Avaliador = mongoose.model("Avaliador", avaliadorSchema);
 
 module.exports = {
     Avaliador,
-    autoravaliadorSchemaSchema,
+    avaliadorSchema,
 };

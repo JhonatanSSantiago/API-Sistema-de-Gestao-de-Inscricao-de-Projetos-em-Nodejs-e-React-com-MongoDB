@@ -1,15 +1,8 @@
-class Avaliacao {
-    projeto;
-    parecer;
-    nota;
-    dataAvaliacao;
-    avaliador;
-}
-
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const { projetoSchema } = require("./Projeto");
 const { avaliadorSchema } = require("./Avaliador");
+const { premioSchema } = require("./Premio");
 
 const avaliacaoSchema = new Schema({
     projeto: {
@@ -29,6 +22,9 @@ const avaliacaoSchema = new Schema({
     },
     avaliador: {
         type: String
+    },
+    premio: {
+        type: premioSchema
     }
 },{ timestamps: true});
 
