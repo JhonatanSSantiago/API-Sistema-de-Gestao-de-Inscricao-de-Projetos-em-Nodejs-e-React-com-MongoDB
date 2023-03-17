@@ -1,0 +1,17 @@
+{
+  "name": "sgip",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Jhonatan Santiago",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "~4.16.1",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
