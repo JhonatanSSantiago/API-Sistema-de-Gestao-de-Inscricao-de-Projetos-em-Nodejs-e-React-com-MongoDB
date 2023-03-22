@@ -45,6 +45,26 @@ const autorController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    delete: async(req, res) => {
+        try {
+
+            const id = req.params.id
+            const autor = await AutorModel.findById(id);
+
+            if(!autor){
+                res.status(404).json({msg: "Autor não encontrado"});
+                return;
+            }
+
+            const deletedAutor = await AutorModel.findByIdAndDelete(id);
+
+            res.status(200).json({deletedAutor, msg: "Autor excluído com sucesso"});
+
+            
+        } catch (error) {
+            console.log(error);
+        }
     }
     
 };

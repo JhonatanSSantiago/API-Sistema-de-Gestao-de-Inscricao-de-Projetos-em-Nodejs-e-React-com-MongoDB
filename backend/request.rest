@@ -16,8 +16,14 @@ GET http://localhost:3000/api/autor
 
 
 ###
-
 GET http://localhost:3000/api/autor/641af21e1f27d1bd5abc65ce
 
 ###
 GET http://localhost:3000/api/autor/641af21e1f27d1bd5abc65cd
+
+
+###
+DELETE http://localhost:3000/api/autor/641af21e1f27d1bd5abc65ce
+
+###
+DELETE http://localhost:3000/api/autor/641af21e1f27d1bd5abc65cb
