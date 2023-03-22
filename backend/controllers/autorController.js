@@ -21,8 +21,17 @@ const autorController = {
         } catch (error){
             console.log(error);
         }
+    },
+    getAll: async(req, res) => {
+        try {
+            const autor = await AutorModel.find();
+            res.json(autor);
+            
+        } catch (error) {
+            console.log(error);
+        }
     }
     
-}
+};
 
 module.exports =   autorController ;
