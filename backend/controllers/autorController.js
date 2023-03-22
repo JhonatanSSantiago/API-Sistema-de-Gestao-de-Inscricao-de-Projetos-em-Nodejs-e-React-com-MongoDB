@@ -30,6 +30,21 @@ const autorController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    get: async(req, res) => {
+        try {
+            const id = req.params.id;
+            const autor = await AutorModel.findById(id);
+
+            if(!autor){
+                res.status(404).json({msg: "Autor não encontrado"});
+                return;
+            }
+
+            res.json(autor);
+        } catch (error) {
+            console.log(error);
+        }
     }
     
 };
