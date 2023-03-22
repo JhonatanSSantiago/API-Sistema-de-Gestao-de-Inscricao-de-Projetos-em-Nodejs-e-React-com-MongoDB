@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/autor
+Content-Type: application/json
+
+{
+    "nome": "Alguém Fulano",
+    "cpf": "000.000.000-00",
+    "email": "email@email.com",
+    "telefone": "(00) 00000-0000",
+    "endereco": "0 Sul, lt 0, 00000-000 Palmas - TO, BR",
+    "formacao": "alguma"
+}
