@@ -37,7 +37,21 @@ const projetoController = {
         } catch (error) {
             console.log("Erro: "+ error);
         }
-    }
+    },
+    delete: async(req, res) => {
+        try {
+            const id = req.params.id
+            const projeto = await ProjetoModel.findById(id);
+            if(!projeto){
+                res.status(404).json({msg: "Projeto não encontrado"});
+                return;
+            }
+            const deletedProjeto = await ProjetoModel.findByIdAndDelete(id);
+            res.status(200).json({deletedProjeto, msg: "Projeto excluído com sucesso"});            
+        } catch (error) {
+            console.log("Erro: "+ error);
+        }
+    },
 };
 
 module.exports = projetoController;
