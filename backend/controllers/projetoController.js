@@ -24,6 +24,19 @@ const projetoController = {
         } catch (error) {
             console.log("Erro: "+ error);
         }
+    },
+    get: async(req, res) => {
+        try {
+            const id = req.params.id;
+            const projeto = await ProjetoModel.findById(id);
+            if(!projeto){
+                res.status(404).json({msg: "Projeto não encontrado"});
+                return;
+            }
+            res.json(projeto);
+        } catch (error) {
+            console.log("Erro: "+ error);
+        }
     }
 };
 
