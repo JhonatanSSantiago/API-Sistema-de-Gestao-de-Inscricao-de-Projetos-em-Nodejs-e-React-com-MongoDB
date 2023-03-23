@@ -8,4 +8,6 @@ router.route("/autor").get((req, res) => autorController.getAll(req, res));
 router.route("/autor/:id").get((req, res) => autorController.get(req, res));
 
 router.route("/autor/:id").delete((req, res) => autorController.delete(req, res));
+
+router.route("/autor/:id").put((req, res) => autorController.update(req, res));
 module.exports = router;

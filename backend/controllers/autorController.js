@@ -52,6 +52,29 @@ const autorController = {
         } catch (error) {
             console.log("Erro: "+ error);
         }
+    },
+    update: async (req, res) => {
+        try{
+            const id = req.params.id
+
+            const autor = {
+                nome: req.body.nome,
+                cpf: req.body.cpf,
+                email: req.body.email,
+                telefone: req.body.telefone,
+                endereco: req.body.endereco,
+                formacao: req.body.formacao
+            };
+    
+            const updateAutor = await AutorModel.findByIdAndUpdate(id, autor);
+            if(!autor){
+                res.status(404).json({msg: "Autor não encontrado"});
+                return;
+            }
+            res.status(200).json({ autor, msg: "Autor atualizado com sucesso!"});
+        }catch (error) {
+            console.log("Erro: "+ error);
+        }
     }
     
 };
