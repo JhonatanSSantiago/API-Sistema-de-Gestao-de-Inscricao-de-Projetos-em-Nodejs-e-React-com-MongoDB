@@ -16,6 +16,14 @@ const projetoController = {
         } catch (error){
             console.log("Erro: "+ error);
         }
+    },
+    getAll: async(req, res) => {
+        try {
+            const projeto = await ProjetoModel.find();
+            res.json(projeto);
+        } catch (error) {
+            console.log("Erro: "+ error);
+        }
     }
 };
 
