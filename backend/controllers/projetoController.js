@@ -52,6 +52,29 @@ const projetoController = {
             console.log("Erro: "+ error);
         }
     },
+    update: async (req, res) => {
+        try{
+            const id = req.params.id
+
+            const projeto = {
+                area: req.body.area,
+                titulo: req.body.titulo,
+                resumo: req.body.resumo,
+                autor: req.body.autor,
+                status: req.body.status,
+                data_envio: req.body.data_envio,
+            };
+    
+            const updateProjeto = await ProjetoModel.findByIdAndUpdate(id, projeto);
+            if(!projeto){
+                res.status(404).json({msg: "Projeto não encontrado"});
+                return;
+            }
+            res.status(200).json({ projeto, msg: "Projeto atualizado com sucesso!"});
+        }catch (error) {
+            console.log("Erro: "+ error);
+        }
+    }
 };
 
 module.exports = projetoController;
