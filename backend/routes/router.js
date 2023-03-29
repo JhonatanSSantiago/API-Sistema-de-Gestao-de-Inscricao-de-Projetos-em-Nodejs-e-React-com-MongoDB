@@ -8,6 +8,8 @@ router.use("/", autorRouter);
 const projetoRouter = require("./projetoRoute");
 router.use("/", projetoRouter);
 
-
+//Premio router
+const premioRouter = require("./premioRoute");
+router.use("/", premioRouter);
 
 module.exports = router;
