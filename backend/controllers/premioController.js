@@ -70,7 +70,7 @@ const premioController = {
                 res.status(404).json({msg: "Premio não encontrado"});
                 return;
             }
-            res.status(200).json({ autor, msg: "Premio atualizado com sucesso!"});
+            res.status(200).json({ premio, msg: "Premio atualizado com sucesso!"});
         }catch (error) {
             console.log("Erro: "+ error);
         }
