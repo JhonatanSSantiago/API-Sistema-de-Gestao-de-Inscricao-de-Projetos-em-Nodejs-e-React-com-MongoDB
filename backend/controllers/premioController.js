@@ -11,7 +11,7 @@ const premioController = {
                 inicio: req.body.inicio,
                 encerramento: req.body.encerramento
             }
-            const responde =await PremioModel.create(premio);
+            const response =await PremioModel.create(premio);
             res.status(201).json({response, msg: "Prêmio criado com sucesso!"});
         } catch (error) {
             console.log("Erro: "+ error);
