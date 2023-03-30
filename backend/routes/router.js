@@ -20,4 +20,9 @@ router.use("/", avaliadorRouter);
 const avaliacaoRouter = require("./avaliacaoRoute");
 router.use("/", avaliacaoRouter);
 
+//Cronograma router
+const cronogramaRouter = require("./cronogramaRoute");
+router.use("/", cronogramaRouter);
+
+
 module.exports = router;
