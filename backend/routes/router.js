@@ -12,4 +12,8 @@ router.use("/", projetoRouter);
 const premioRouter = require("./premioRoute");
 router.use("/", premioRouter);
 
+//Avaliador router
+const avaliadorRouter = require("./avaliadorRoute");
+router.use("/", avaliadorRouter);
+
 module.exports = router;
