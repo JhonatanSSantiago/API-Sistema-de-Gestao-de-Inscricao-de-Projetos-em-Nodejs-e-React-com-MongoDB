@@ -15,6 +15,10 @@ const autorSchema = new Schema(
             type: String,
             required: true
         },
+        senha: {
+            type: String,
+            required: true
+        },
         telefone: {
             type: String,
             required: true
