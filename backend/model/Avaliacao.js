@@ -21,7 +21,7 @@ const avaliacaoSchema = new Schema({
         required: true
     },
     avaliador: {
-        type: String
+        type: avaliadorSchema
     },
     premio: {
         type: premioSchema

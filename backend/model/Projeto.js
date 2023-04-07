@@ -16,11 +16,10 @@ const projetoSchema = new Schema({
         required: true,
     },
     autor: {
-        type: [autorSchema],
+        type: autorSchema,
     },
     status: {
         type: String,
-        required: true,
     },
     data_envio: {
         type: String,
