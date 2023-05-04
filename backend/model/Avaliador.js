@@ -4,32 +4,25 @@ const { Schema } = mongoose;
 const avaliadorSchema = new Schema(
     {
         nome: {
-            type: String,
-            required: true
+            type: String  
         },
         cpf: {
-            type: String,
-            required: true
+            type: String
         },
         email: {
-            type: String,
-            required: true
+            type: String
         },
         senha: {
-            type: String,
-            required: true
+            type: String
         },
         telefone: {
-            type: String,
-            required: true
+            type: String
         },
         endereco: {
-            type: String,
-            required: true
+            type: String
         },
         formacao: {
-            type: String,
-            required: true
+            type: String
         },
     },{ timestamps: true} //salva data de criação e atualização
 );

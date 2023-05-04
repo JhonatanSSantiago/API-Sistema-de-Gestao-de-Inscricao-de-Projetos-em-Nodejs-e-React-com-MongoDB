@@ -3,16 +3,13 @@ const { Schema } = mongoose;
 
 const cronogramaSchema = new Schema({
     inscricao: {
-        type: String,
-        required: true,
+        type: String
     },
     avaliacao: {
-        type: String,
-        required: true,
+        type: String
     },
     resultado: {
-        type: String,
-        required: true,
+        type: String
     }
 },{ timestamps: true});
 

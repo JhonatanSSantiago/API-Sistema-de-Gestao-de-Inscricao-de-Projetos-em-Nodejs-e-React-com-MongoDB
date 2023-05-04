@@ -9,16 +9,13 @@ const avaliacaoSchema = new Schema({
         type: projetoSchema
     },
     parecer: {
-        type: String,
-        required: true,
+        type: String
     },
     nota: {
-        type: Number,
-        required: true,
+        type: Number
     },
     dataAvaliacao: {
-        type: String,
-        required: true
+        type: String
     },
     avaliador: {
         type: avaliadorSchema

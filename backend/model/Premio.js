@@ -5,27 +5,22 @@ const { cronogramaSchema } = require("./Cronograma");
 const premioSchema = new Schema(
     {
         nome: {
-            type: String,
-            required: true
+            type: String
         },
         descricao: {
-            type: String,
-            required: true
+            type: String
         },
         ano: {
-            type: String,
-            required: true
+            type: String
         },
         cronograma: {
             type: cronogramaSchema
         },
         inicio: {
-            type: String,
-            required: true
+            type: String
         },
         encerramento: {
-            type: String,
-            required: true
+            type: String
         },
     },{ timestamps: true} //salva data de criação e atualização
 );

@@ -4,26 +4,22 @@ const { autorSchema } = require("./Autor");
 
 const projetoSchema = new Schema({
     area: {
-        type: String,
-        required: true,
+        type: String
     },
     titulo: {
-        type: String,
-        required: true,
+        type: String
     },
     resumo: {
-        type: String,
-        required: true,
+        type: String
     },
     autor: {
-        type: autorSchema,
+        type: autorSchema
     },
     status: {
-        type: String,
+        type: String
     },
     data_envio: {
-        type: String,
-        required: true,
+        type: String
     },
 },{ timestamps: true});
 
