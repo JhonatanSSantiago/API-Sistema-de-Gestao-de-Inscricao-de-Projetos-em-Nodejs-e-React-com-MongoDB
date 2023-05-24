@@ -4,6 +4,8 @@ const cronogramaController = {
     create: async(req, res) => {
         try {
             const cronograma = {
+                inicio: req.body.inicio,
+                encerramento: req.body.encerramento,
                 inscricao: req.body.inscricao,
                 avaliacao: req.body.avaliacao,
                 resultado: req.body.resultado
@@ -54,6 +56,8 @@ const cronogramaController = {
             const id = req.params.id
 
             const cronograma = {
+                inicio: req.body.inicio,
+                encerramento: req.body.encerramento,
                 inscricao: req.body.inscricao,
                 avaliacao: req.body.avaliacao,
                 resultado: req.body.resultado,

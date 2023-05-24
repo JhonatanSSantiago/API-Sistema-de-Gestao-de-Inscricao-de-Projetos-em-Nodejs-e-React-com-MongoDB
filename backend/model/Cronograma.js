@@ -2,6 +2,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const cronogramaSchema = new Schema({
+    
+    inicio: {
+        type: String
+    },
+    encerramento: {
+        type: String
+    },
     inscricao: {
         type: String
     },

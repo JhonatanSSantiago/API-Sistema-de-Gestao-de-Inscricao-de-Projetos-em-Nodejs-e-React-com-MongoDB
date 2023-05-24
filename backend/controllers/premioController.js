@@ -7,9 +7,11 @@ const premioController = {
                 nome: req.body.nome,
                 descricao: req.body.descricao,
                 ano: req.body.descricao,
-                cronograma: req.body.cronograma,
                 inicio: req.body.inicio,
-                encerramento: req.body.encerramento
+                encerramento: req.body.encerramento,
+                inscricao: req.body.inscricao,
+                avaliacao: req.body.avaliacao,
+                resultado: req.body.resultado              
             }
             const response =await PremioModel.create(premio);
             res.status(201).json({response, msg: "Prêmio criado com sucesso!"});
@@ -60,9 +62,11 @@ const premioController = {
                 nome: req.body.nome,
                 descricao: req.body.descricao,
                 ano: req.body.descricao,
-                cronograma: req.body.cronograma,
                 inicio: req.body.inicio,
-                encerramento: req.body.encerramento
+                encerramento: req.body.encerramento,
+                inscricao: req.body.inscricao,
+                avaliacao: req.body.avaliacao,
+                resultado: req.body.resultado     
             }
     
             const updatePremio = await PremioModel.findByIdAndUpdate(id, premio);

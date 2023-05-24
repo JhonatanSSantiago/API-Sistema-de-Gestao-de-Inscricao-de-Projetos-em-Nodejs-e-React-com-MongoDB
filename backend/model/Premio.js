@@ -13,15 +13,21 @@ const premioSchema = new Schema(
         ano: {
             type: String
         },
-        cronograma: {
-            type: cronogramaSchema
-        },
         inicio: {
             type: String
         },
         encerramento: {
             type: String
         },
+        inscricao: {
+            type: String
+        },
+        avaliacao: {
+            type: String
+        },
+        resultado: {
+            type: String
+        }
     },{ timestamps: true} //salva data de criação e atualização
 );
 

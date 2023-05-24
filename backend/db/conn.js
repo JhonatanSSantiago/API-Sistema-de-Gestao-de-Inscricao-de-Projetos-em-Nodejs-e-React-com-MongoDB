@@ -10,7 +10,7 @@ async function main(){
         console.log("Conectado do Banco de Dados na Nuvem!");
     } catch (error) {
         console.log("Erro ao conectar ao Banco de Dados na Nuvem: "+error);
-        console.log("disconnecting...");
+     /*   console.log("disconnecting...");
         try {
             console.log("Tentando conectar ao Banco de Dados Local ");
             console.log("connecting...");
@@ -18,7 +18,7 @@ async function main(){
             console.log("Conectado ao Banco de Dados Local! "); 
         } catch (error) {
             console.log("Erro ao conectar ao Banco de Dados Local "+error);
-        }
+        } */
                  
     }
 }
