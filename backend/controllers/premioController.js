@@ -61,7 +61,7 @@ const premioController = {
             const premio = {
                 nome: req.body.nome,
                 descricao: req.body.descricao,
-                ano: req.body.descricao,
+                ano: req.body.ano,
                 inicio: req.body.inicio,
                 encerramento: req.body.encerramento,
                 inscricao: req.body.inscricao,
