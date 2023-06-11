@@ -27,3 +27,14 @@ a:hover {
 p {
     color: #a9abb3;
 }
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.table {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+}

@@ -1,0 +1,41 @@
+.newPremio h2 {
+    text-align: center;
+    margin: 1rem
+}
+
+form {
+        max-width: 500px;
+        width:  100%;
+        margin:  0 auto;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.form-control-data {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+.form-control-data label {
+    margin-right: 1rem;
+}
+
+.form-control-data input {
+    padding: .5rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-control label {
+    margin-bottom: 1rem;
+}
+
+.form-control input, .form-control textarea {
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+}
