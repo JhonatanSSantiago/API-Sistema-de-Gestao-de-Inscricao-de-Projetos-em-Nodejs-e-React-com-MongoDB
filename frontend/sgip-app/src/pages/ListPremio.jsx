@@ -1,4 +1,4 @@
-import axios from "axios";
+import basePathUrl from "../axios/config";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,10 +12,8 @@ const ListPremio = () => {
       
       try {
         
-        const reponse = await axios.get("http://localhost:3000/api/premio");
+        const reponse = await basePathUrl.get("/premio");
         const data = reponse.data;
-
-        console.log(data);
         setPremios(data);
 
       } catch (error) {
@@ -52,8 +50,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.nome}</td>                                                           
+                    <div className="table" key={premio._id}>                                        
+                        <div>{premio.nome}</div>                                                         
                     </div>
                   ))
                 )}
@@ -61,8 +59,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.descricao}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        <div>{premio.descricao}</div>                                                           
                     </div>
                   ))
                 )}
@@ -70,8 +68,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.ano}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        <div>{premio.ano}</div>                                                           
                     </div>
                   ))
                 )}
@@ -79,8 +77,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.inicio}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                       {premio.inicio}                                                          
                     </div>
                   ))
                 )}
@@ -88,8 +86,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.encerramento}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        {premio.encerramento}                                                        
                     </div>
                   ))
                 )}
@@ -97,8 +95,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.inscricao}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        {premio.inscricao}                                                        
                     </div>
                   ))
                 )}
@@ -106,8 +104,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.avaliacao}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        {premio.avaliacao}                                                         
                     </div>
                   ))
                 )}
@@ -115,8 +113,8 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
-                        <td>{premio.resultado}</td>                                                           
+                    <div className="table" key={premio._id}>                
+                        {premio.resultado}                                                           
                     </div>
                   ))
                 )}
@@ -124,7 +122,7 @@ const ListPremio = () => {
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
                   premios.map((premio) => ( 
-                    <div className="premios" key={premio._id}>                
+                    <div className="table" key={premio._id}>                
                        <Link to={`/listpremio/${premio._id}`} className="btn">Ver</Link>                                                          
                     </div>
                   ))
