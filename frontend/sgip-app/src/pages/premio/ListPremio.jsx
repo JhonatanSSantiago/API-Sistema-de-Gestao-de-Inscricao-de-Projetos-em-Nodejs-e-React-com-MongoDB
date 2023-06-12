@@ -1,4 +1,4 @@
-import basePathUrl from "../axios/config";
+import basePathUrl from "../../axios/config";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

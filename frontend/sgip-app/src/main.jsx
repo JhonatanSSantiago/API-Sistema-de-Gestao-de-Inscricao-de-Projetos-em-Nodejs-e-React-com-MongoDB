@@ -5,8 +5,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import NewPremio from "./pages/NewPremio";
-import ListPremio from "./pages/ListPremio";
+import NewPremio from "./pages/premio/NewPremio";
+import ListPremio from "./pages/premio/ListPremio";
 
 import "./index.css";
 
