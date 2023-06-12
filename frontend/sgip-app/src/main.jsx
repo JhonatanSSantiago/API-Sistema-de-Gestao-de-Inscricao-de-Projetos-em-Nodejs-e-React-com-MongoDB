@@ -9,6 +9,8 @@ import NewPremio from "./pages/premio/NewPremio";
 import ListPremio from "./pages/premio/ListPremio";
 import NewAutor from "./pages/autor/NewAutor";
 import ListAutor from "./pages/autor/ListAutor";
+import NewProjeto from "./pages/projeto/NewProjeto";
+import ListProjeto from "./pages/projeto/ListProjeto";
 
 import "./index.css";
 
@@ -39,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/newprojeto",
-        element: <ListPremio />
+        element: <NewProjeto />
+      },
+      {
+        path: "/listprojeto",
+        element: <ListProjeto />
       },
       {
         path: "/listprojeto",

@@ -13,6 +13,8 @@ const Navbar = () => {
             <li><Link to={'/listpremio'} >Listar Premios</Link></li>
             <li><Link to={'/newautor'}>Cadastrar Autor</Link></li>
             <li><Link to={'/listautor'} >Listar Autores</Link></li>
+            <li><Link to={'/newprojeto'}>Cadastrar Projeto</Link></li>
+            <li><Link to={'/listprojeto'} >Listar Projetos</Link></li>
         </ul>
     </nav>
   )
