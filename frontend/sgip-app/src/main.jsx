@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NewPremio from "./pages/premio/NewPremio";
 import ListPremio from "./pages/premio/ListPremio";
+import NewAutor from "./pages/autor/NewAutor";
+import ListAutor from "./pages/autor/ListAutor";
 
 import "./index.css";
 
@@ -26,7 +28,24 @@ const router = createBrowserRouter([
       {
         path: "/listpremio",
         element: <ListPremio />
-      }
+      },
+      {
+        path: "/newautor",
+        element: <NewAutor />
+      },
+      {
+        path: "/listautor",
+        element: <ListAutor />
+      },
+      {
+        path: "/newprojeto",
+        element: <ListPremio />
+      },
+      {
+        path: "/listprojeto",
+        element: <ListPremio />
+      },
+      
   ]
   }
 ])
