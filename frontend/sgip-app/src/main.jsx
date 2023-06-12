@@ -11,6 +11,8 @@ import NewAutor from "./pages/autor/NewAutor";
 import ListAutor from "./pages/autor/ListAutor";
 import NewProjeto from "./pages/projeto/NewProjeto";
 import ListProjeto from "./pages/projeto/ListProjeto";
+import NewAvaliador from "./pages/avaliador/NewAvaliador";
+import ListAvaliador from "./pages/avaliador/ListAvaliador";
 
 import "./index.css";
 
@@ -48,8 +50,12 @@ const router = createBrowserRouter([
         element: <ListProjeto />
       },
       {
-        path: "/listprojeto",
-        element: <ListPremio />
+        path: "/newavaliador",
+        element: <NewAvaliador />
+      },
+      {
+        path: "/listavaliador",
+        element: <ListAvaliador />
       },
       
   ]
