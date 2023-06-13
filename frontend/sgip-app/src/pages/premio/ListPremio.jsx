@@ -24,6 +24,14 @@ const ListPremio = () => {
 
    }
 
+   const deletePremio = async (id) => {
+    await basePathUrl.delete(`premio/${id}`);
+
+    const filteredPosts = premios.filter((premio) => premio._id !== id);
+
+    setPremios(filteredPosts);
+  };
+
    useEffect(() => {
       getPremios()
    }, [])
@@ -121,10 +129,13 @@ const ListPremio = () => {
                 </td>
                 <td>
                 {premios.length === 0 ? <p>Carregando..</p> :  (
-                  premios.map((premio) => ( 
+                  premios.map((premio) => ( <>
                     <div className="table" key={premio._id}>                
-                       <Link to={`/listpremio/${premio._id}`} className="btn">Ver</Link>                                                          
+                       <Link to={`/listpremio/${premio._id}`} className="btn">Ver</Link>                                                                            
                     </div>
+                     <div className="table" key={premio._id}>                
+                     <Link onClick={()=> deletePremio(premio._id)} className="btn">Excluir</Link>                                                          
+                  </div> </>
                   ))
                 )}
                 </td>
