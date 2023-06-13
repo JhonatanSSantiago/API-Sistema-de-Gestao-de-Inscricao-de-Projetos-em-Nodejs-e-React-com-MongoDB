@@ -17,6 +17,8 @@ const Navbar = () => {
             <li><Link to={'/listprojeto'} >Listar Projetos</Link></li>
             <li><Link to={'/newavaliador'}>Cadastrar Avaliador</Link></li>
             <li><Link to={'/listavaliador'} >Listar Avaliadores</Link></li>
+            <li><Link to={'/newavaliacao'}>Realizar Avaliação</Link></li>
+            <li><Link to={'/listavaliacao'} >Avaliações Realizadas</Link></li>
         </ul>
     </nav>
   )

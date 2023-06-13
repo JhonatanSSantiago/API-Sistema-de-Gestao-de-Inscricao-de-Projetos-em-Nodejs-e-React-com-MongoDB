@@ -13,6 +13,8 @@ import NewProjeto from "./pages/projeto/NewProjeto";
 import ListProjeto from "./pages/projeto/ListProjeto";
 import NewAvaliador from "./pages/avaliador/NewAvaliador";
 import ListAvaliador from "./pages/avaliador/ListAvaliador";
+import NewAvaliacao from "./pages/avaliacao/NewAvaliacao";
+import ListAvaliacao from "./pages/avaliacao/ListAvaliacao";
 
 import "./index.css";
 
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/listavaliador",
         element: <ListAvaliador />
+      },
+      {
+        path: "/newavaliacao",
+        element: <NewAvaliacao />
+      },
+      {
+        path: "/listavaliacao",
+        element: <ListAvaliacao />
       },
       
   ]
