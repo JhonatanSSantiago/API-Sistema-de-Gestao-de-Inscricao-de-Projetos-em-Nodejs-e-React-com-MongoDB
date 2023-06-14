@@ -9,8 +9,6 @@ const EditAvaliador = () => {
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [confirmedSenha, setConfirmedSenha] = useState("");
   const [telefone, setTelefone] = useState("");
   const [endereco, setEndereco] = useState("");
   const [formacao, setFormacao] = useState("");
@@ -23,8 +21,6 @@ const EditAvaliador = () => {
         setNome(avaliador.nome);
         setCpf(avaliador.cpf);
         setEmail(avaliador.email);
-        setSenha(avaliador.senha);
-        setConfirmedSenha(avaliador.confirmedSenha);
         setTelefone(avaliador.telefone);
         setEndereco(avaliador.endereco);
         setFormacao(avaliador.formacao);
@@ -38,7 +34,7 @@ const EditAvaliador = () => {
 
   const updateAvaliador = async (e) => {
     e.preventDefault();
-    const avaliador = { nome, cpf, email, senha, confirmedSenha, telefone, endereco, formacao };
+    const avaliador = { nome, cpf, email, telefone, endereco, formacao };
     await basePathUrl.put(`/avaliador/${id}`, avaliador);
     navigate("/listavaliador");
   };
@@ -65,14 +61,6 @@ const EditAvaliador = () => {
         <div className="form-control">
           <label htmlFor="email">Email: </label>
           <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div className="form-control">
-          <label htmlFor="senha">Senha: </label>
-          <input type="password" name="senha" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
-        </div>
-        <div className="form-control">
-          <label htmlFor="confirmedSenha">Confirmar Senha: </label>
-          <input type="password" name="confirmedSenha" id="confirmedSenha" value={confirmedSenha} onChange={(e) => setConfirmedSenha(e.target.value)} />
         </div>
         <div className="form-control">
           <label htmlFor="endereco">Endereço: </label>

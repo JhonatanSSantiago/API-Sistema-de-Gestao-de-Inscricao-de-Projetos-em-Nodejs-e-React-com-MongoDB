@@ -8,8 +8,6 @@ const NewAvaliador = () => {
   const [nome, setNome] = useState()
   const [cpf, setCpf] = useState()
   const [email, setEmail] = useState()
-  const [senha, setSenha] = useState()
-  const [confirmedSenha, setConfirmedSenha] = useState()
   const [telefone, setTelefone] = useState()
   const [endereco, setEndereco] = useState()
   const [formacao, setFormacao] = useState()
@@ -17,7 +15,7 @@ const NewAvaliador = () => {
 
   const createAvaliador = async (e) => {
     e.preventDefault()
-    const avaliador = { nome, cpf, email, senha, confirmedSenha, telefone, endereco, formacao }
+    const avaliador = { nome, cpf, email, telefone, endereco, formacao }
     await basePathUrl.post("/avaliador/", avaliador,);
     navigate("/listavaliador")
   
@@ -46,14 +44,6 @@ const NewAvaliador = () => {
             <div className="form-control">
               <label htmlFor="email">Email: </label>
               <input type="email" name="email" id="email" placeholder="exemplo@email.com" onChange={(e) => setEmail(e.target.value)} /> 
-            </div>
-            <div className="form-control">
-              <label htmlFor="senha">Senha: </label>
-              <input type="password" name="senha" id="senha" placeholder="Digite uma senha" onChange={(e) => setSenha(e.target.value)}/>
-            </div>
-            <div className="form-control">
-              <label htmlFor="confirmedSenha">Confirmar Senha: </label>
-              <input type="password" name="confirmedSenha" id="confirmedSenha" placeholder="Confirme a senha" onChange={(e) => setConfirmedSenha(e.target.value)}/>
             </div>
             <div className="form-control">
               <label htmlFor="endereco">Endereço: </label>

@@ -12,9 +12,6 @@ const autorSchema = new Schema(
         email: {
             type: String
         },
-        senha: {
-            type: String
-        },
         telefone: {
             type: String
         },

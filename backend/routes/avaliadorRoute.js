@@ -3,8 +3,6 @@ const avaliadorController = require("../controllers/avaliadorController");
 
 router.route("/avaliador").post((req, res) => avaliadorController.create(req, res));
 
-router.route("/avaliador/login").post((req, res) => avaliadorController.login(req, res));
-
 router.route("/avaliador").get((req, res) => avaliadorController.getAll(req, res));
 
 router.route("/avaliador/:id").get((req, res) => avaliadorController.get(req, res));
