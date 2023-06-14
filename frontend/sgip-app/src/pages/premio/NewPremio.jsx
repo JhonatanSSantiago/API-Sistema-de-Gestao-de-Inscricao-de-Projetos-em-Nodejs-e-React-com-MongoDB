@@ -1,4 +1,4 @@
-import './NewPremio.css';
+//import './NewPremio.css';
 import basePathUrl from "../../axios/config";
 import { useState  } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -58,7 +58,7 @@ const NewPremio = () => {
           <label htmlFor="resultado">Dia do resultado: </label>
           <input type="date" name="resultado" id="resultado" onChange={(e) => setResultado(e.target.value)}/>
         </div>          
-        <input className='form-control' type="submit" value="Cadastrar Prêmio"/>
+        <input  className="btn btn-primary" type="submit" value="Cadastrar Prêmio"/>
        </form>
     </div>
   )

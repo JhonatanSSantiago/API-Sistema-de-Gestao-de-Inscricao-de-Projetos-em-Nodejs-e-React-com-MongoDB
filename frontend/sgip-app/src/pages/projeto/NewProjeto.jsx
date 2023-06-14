@@ -95,7 +95,7 @@ const NewProjeto = () => {
             ))}          
           </select>
         </div>     
-        <input className='form-control' type="submit" value="Cadastrar Prêmio"/>
+        <input className="btn btn-primary" type="submit" value="Cadastrar Prêmio"/>
        </form>
     </div>
   )

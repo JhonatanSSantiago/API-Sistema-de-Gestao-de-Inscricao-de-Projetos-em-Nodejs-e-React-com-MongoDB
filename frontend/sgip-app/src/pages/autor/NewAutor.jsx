@@ -58,7 +58,7 @@ const NewAutor = () => {
               <label htmlFor="endereco">Endereço: </label>
               <input  type="text" name="endereco" id="endereco" placeholder="Informe seu endereço "onChange={(e) => setEndereco(e.target.value)}/>
             </div>          
-            <input className='form-control' type="submit" value="Cadastrar Autor"/>
+            <input className="btn btn-primary" type="submit" value="Cadastrar Autor"/>
                  
         </form>
 
