@@ -17,6 +17,7 @@ import ListAvaliador from "./pages/avaliador/ListAvaliador";
 import NewAvaliacao from "./pages/avaliacao/NewAvaliacao";
 import ListAvaliacao from "./pages/avaliacao/ListAvaliacao";
 import Projeto from "./pages/projeto/Projeto";
+import EditarAutor from "./pages/autor/EditarAutor";
 
 import "./index.css";
 
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/projeto/:id",
         element: <Projeto />
+      },
+      {
+        path: "/editautor/:id",
+        element: <EditarAutor />
       },
       
   ]

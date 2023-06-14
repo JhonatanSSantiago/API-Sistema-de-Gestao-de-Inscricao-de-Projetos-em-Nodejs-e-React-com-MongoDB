@@ -56,8 +56,8 @@ const ListAutor = () => {
                 <td>{autor.formacao}</td>
                 <td>
                   <div className="btn-group">
-                    <Link to={`/listautor/${autor._id}`} class="btn btn-info">
-                      Ver
+                    <Link to={`/editautor/${autor._id}`} class="btn btn-info">
+                      Editar
                     </Link>
                     <Link onClick={() => deleteAutor(autor._id)} className="btn btn-danger">
                       Excluir
