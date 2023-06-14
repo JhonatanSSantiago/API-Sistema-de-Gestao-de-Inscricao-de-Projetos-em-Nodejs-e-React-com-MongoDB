@@ -8,7 +8,7 @@ const projetoController = {
                 titulo: req.body.titulo,
                 resumo: req.body.resumo,
                 autor: req.body.autor,
-                status: req.body.status,
+                status: req.body.statusprojeto,
                 data_envio: req.body.data_envio,
             };
             const response = await ProjetoModel.create(projeto);
