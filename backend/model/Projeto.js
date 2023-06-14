@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const { autorSchema } = require("./Autor");
 
 const projetoSchema = new Schema({
     area: {
@@ -13,7 +12,7 @@ const projetoSchema = new Schema({
         type: String
     },
     autor: {
-        type: autorSchema
+        type: mongoose.ObjectId
     },
     status: {
         type: String

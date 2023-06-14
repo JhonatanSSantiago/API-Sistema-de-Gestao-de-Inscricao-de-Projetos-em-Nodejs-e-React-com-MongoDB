@@ -1,12 +1,9 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const { projetoSchema } = require("./Projeto");
-const { avaliadorSchema } = require("./Avaliador");
-const { premioSchema } = require("./Premio");
 
 const avaliacaoSchema = new Schema({
     projeto: {
-        type: projetoSchema
+        type: mongoose.ObjectId
     },
     parecer: {
         type: String
@@ -18,10 +15,10 @@ const avaliacaoSchema = new Schema({
         type: String
     },
     avaliador: {
-        type: avaliadorSchema
+        type: mongoose.ObjectId
     },
     premio: {
-        type: premioSchema
+        type: mongoose.ObjectId
     }
 },{ timestamps: true});
 
