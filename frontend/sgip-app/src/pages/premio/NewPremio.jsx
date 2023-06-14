@@ -1,4 +1,3 @@
-//import './NewPremio.css';
 import basePathUrl from "../../axios/config";
 import { useState  } from 'react';
 import { useNavigate } from "react-router-dom";
