@@ -60,8 +60,8 @@ const ListAvaliador = () => {
                 <td>{avaliador.formacao}</td>
                 <td>
                   <div className="btn-group">
-                    <Link to={`/listavaliador/${avaliador._id}`} class="btn btn-info">
-                      Ver
+                    <Link to={`/editavaliador/${avaliador._id}`} class="btn btn-info">
+                      Editar
                     </Link>
                     <button onClick={() => deleteAvaliador(avaliador._id)} className="btn btn-danger">
                       Excluir
