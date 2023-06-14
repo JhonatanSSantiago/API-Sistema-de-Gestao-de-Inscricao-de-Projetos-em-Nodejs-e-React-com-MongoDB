@@ -74,7 +74,7 @@ const avaliadorController = {
                 res.status(404).json({msg: "Avaliador não encontrado"});
                 return;
             }
-            const avaliadorAutor = await AvaliadorModel.findByIdAndDelete(id);
+            const deletedAvaliador = await AvaliadorModel.findByIdAndDelete(id);
             res.status(200).json({deletedAvaliador, msg: "Avaliador excluído com sucesso"});            
         } catch (error) {
             console.log("Erro: "+ error);
