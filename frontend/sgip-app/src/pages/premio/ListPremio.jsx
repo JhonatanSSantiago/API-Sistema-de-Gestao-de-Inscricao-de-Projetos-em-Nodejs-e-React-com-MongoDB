@@ -2,9 +2,6 @@ import basePathUrl from "../../axios/config";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
-
-
 const ListPremio = () => {
 
   const[premios, setPremios] = useState([]);
