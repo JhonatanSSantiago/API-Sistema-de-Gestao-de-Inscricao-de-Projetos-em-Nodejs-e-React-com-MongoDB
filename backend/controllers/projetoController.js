@@ -63,7 +63,7 @@ const projetoController = {
                 resumo: req.body.resumo,
                 premio: req.body.premio,
                 autor: req.body.autor,
-                status: req.body.status,
+                status: req.body.statusprojeto,
                 data_envio: req.body.data_envio,
                 parecer: req.body.parecer,
                 nota: req.body.nota,

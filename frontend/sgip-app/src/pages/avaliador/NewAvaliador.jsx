@@ -23,7 +23,8 @@ const NewAvaliador = () => {
   };
 
   return (
-    <div>
+    <div className='newPremio'>
+      <h2>Cadastrar Avaliador</h2>
         <form onSubmit={(e) => createAvaliador(e)}>
               <div className="form-control">
                 <label htmlFor="nome">Nome: </label>

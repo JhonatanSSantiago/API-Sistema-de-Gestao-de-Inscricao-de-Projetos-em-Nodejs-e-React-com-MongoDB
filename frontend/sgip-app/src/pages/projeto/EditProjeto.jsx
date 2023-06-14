@@ -77,7 +77,7 @@ const EditProjeto = () => {
   }, []);
 
   return (
-    <div>
+    <div className='newPremio'>
       <h2>Editar Projeto</h2>
       <form onSubmit={updateProjeto}>
         <div className="form-control">

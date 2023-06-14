@@ -61,7 +61,7 @@ const ListPremio = () => {
                 <td>
                   <div className="btn-group">
                     <Link to={`/editpremio/${premio._id}`} class="btn btn-info">
-                      Ver
+                      Editar
                     </Link>
                     <Link onClick={() => deletePremio(premio._id)} className="btn btn-danger">
                       Excluir

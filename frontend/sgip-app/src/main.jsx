@@ -14,13 +14,12 @@ import NewProjeto from "./pages/projeto/NewProjeto";
 import ListProjeto from "./pages/projeto/ListProjeto";
 import NewAvaliador from "./pages/avaliador/NewAvaliador";
 import ListAvaliador from "./pages/avaliador/ListAvaliador";
-import NewAvaliacao from "./pages/avaliacao/NewAvaliacao";
-import ListAvaliacao from "./pages/avaliacao/ListAvaliacao";
 import Projeto from "./pages/projeto/Projeto";
 import EditarAutor from "./pages/autor/EditarAutor";
 import EditAvaliador from "./pages/avaliador/EditAvaliador";
 import EditPremio from "./pages/premio/EditPremio";
 import EditProjeto from "./pages/projeto/EditProjeto";
+import AvaliarProjeto from "./pages/projeto/AvaliarProjeto";
 import "./index.css";
 
 //criando rotas
@@ -65,14 +64,6 @@ const router = createBrowserRouter([
         element: <ListAvaliador />
       },
       {
-        path: "/newavaliacao",
-        element: <NewAvaliacao />
-      },
-      {
-        path: "/listavaliacao",
-        element: <ListAvaliacao />
-      },
-      {
         path: "/projeto/:id",
         element: <Projeto />
       },
@@ -91,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "/editprojeto/:id",
         element: <EditProjeto/>
+      },
+      {
+        path: "/avaliarprojeto/:id",
+        element: <AvaliarProjeto/>
       }
       
   ]

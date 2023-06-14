@@ -44,7 +44,7 @@ const EditPremio = () => {
   };
 
   return (
-    <div className="editPremio">
+    <div className='newPremio'>
       <h2>Editar Prêmio</h2>
       <form onSubmit={updatePremio}>
         <div className="form-control">

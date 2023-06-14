@@ -62,7 +62,7 @@ const Projeto = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className='newPremio'>
       <h1>Projeto</h1>
       {projeto ? (
         <table className="table">

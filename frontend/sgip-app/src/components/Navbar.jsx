@@ -33,14 +33,6 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link text-primary" to={'/listavaliador'} >Listar Avaliadores</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link text-primary" to={'/newavaliacao'}>Realizar Avaliação</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-primary" to={'/listavaliacao'} >Avaliações Realizadas</Link>
-              </li>
-
-
             </ul>
         </div>
       </nav>

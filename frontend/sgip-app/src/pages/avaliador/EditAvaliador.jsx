@@ -40,7 +40,8 @@ const EditAvaliador = () => {
   };
 
   return (
-    <div>
+    <div className='newPremio'>
+      <h2>Editar Avaliador</h2>
       <form onSubmit={updateAvaliador}>
         <div className="form-control">
           <label htmlFor="nome">Nome: </label>

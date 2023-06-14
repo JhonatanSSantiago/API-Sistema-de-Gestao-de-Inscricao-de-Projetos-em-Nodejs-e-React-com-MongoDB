@@ -22,7 +22,8 @@ const NewAutor = () => {
   };
 
   return (
-    <div>
+    <div className='newPremio'>
+        <h2>Cadastrar Autor</h2>
         <form onSubmit={(e) => createAutor(e)}>
               <div className="form-control">
                 <label htmlFor="nome">Nome: </label>

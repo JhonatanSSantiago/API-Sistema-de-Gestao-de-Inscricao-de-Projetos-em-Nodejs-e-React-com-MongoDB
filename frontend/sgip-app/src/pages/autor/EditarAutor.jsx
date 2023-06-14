@@ -40,7 +40,8 @@ const EditarAutor = () => {
   };
 
   return (
-    <div>
+    <div className='newPremio'>
+      <h2>Editar Autor</h2>
       <form onSubmit={updateAutor}>
         <div className="form-control">
           <label htmlFor="nome">Nome: </label>
