@@ -65,6 +65,10 @@ const projetoController = {
                 autor: req.body.autor,
                 status: req.body.status,
                 data_envio: req.body.data_envio,
+                parecer: req.body.parecer,
+                nota: req.body.nota,
+                dataAvaliacao: req.body.dataAvaliacao,
+                avaliador: req.body.avaliador,
             };
     
             const updateProjeto = await ProjetoModel.findByIdAndUpdate(id, projeto);

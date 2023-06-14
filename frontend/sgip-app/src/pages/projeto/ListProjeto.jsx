@@ -92,7 +92,7 @@ const ListProjeto = () => {
                 <td>{projeto.data_envio}</td>
                 <td>
                   <div className="btn-group">
-                    <Link to={`/listprojeto/${projeto._id}`}  class="btn btn-info">
+                    <Link to={`/projeto/${projeto._id}`}  class="btn btn-info">
                       Ver
                     </Link>
                     <Link onClick={() => deleteProjeto(projeto._id)} className="btn btn-danger">

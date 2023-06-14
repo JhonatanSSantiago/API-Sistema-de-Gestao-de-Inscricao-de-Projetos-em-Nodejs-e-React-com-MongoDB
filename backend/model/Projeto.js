@@ -23,6 +23,18 @@ const projetoSchema = new Schema({
     data_envio: {
         type: String
     },
+    parecer: {
+        type: String
+    },
+    nota: {
+        type: Number
+    },
+    dataAvaliacao: {
+        type: String
+    },
+    avaliador: {
+        type: mongoose.ObjectId
+    },
 },{ timestamps: true});
 
 const Projeto = mongoose.model("Projeto", projetoSchema);
