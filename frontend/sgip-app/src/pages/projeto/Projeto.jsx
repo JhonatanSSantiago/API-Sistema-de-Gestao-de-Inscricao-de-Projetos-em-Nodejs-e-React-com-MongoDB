@@ -1,8 +1,9 @@
 import basePathUrl from "../../axios/config";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const Projeto = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [projeto, setProjeto] = useState(null);
   const [autor, setAutor] = useState(null);
@@ -53,7 +54,7 @@ const Projeto = () => {
 
   const deleteProjeto = async (id) => {
     await basePathUrl.delete(`projeto/${id}`);
-    // Implement your own logic for updating the project list or redirecting
+    navigate("/listprojeto")
   };
 
   useEffect(() => {
@@ -96,7 +97,10 @@ const Projeto = () => {
               <td>{projeto.dataAvaliacao}</td>
               <td>
                 <div className="btn-group">
-                  <Link to={`/listprojeto/${projeto._id}`} className="btn btn-info">
+                <Link to={`/editprojeto/${projeto._id}`} className="btn btn-info">
+                    Editar
+                  </Link>
+                  <Link to={`/avaliarprojeto/${projeto._id}`} className="btn btn-info">
                     Avaliar
                   </Link>
                   <Link onClick={() => deleteProjeto(projeto._id)} className="btn btn-danger">

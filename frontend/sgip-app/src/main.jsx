@@ -20,6 +20,7 @@ import Projeto from "./pages/projeto/Projeto";
 import EditarAutor from "./pages/autor/EditarAutor";
 import EditAvaliador from "./pages/avaliador/EditAvaliador";
 import EditPremio from "./pages/premio/EditPremio";
+import EditProjeto from "./pages/projeto/EditProjeto";
 import "./index.css";
 
 //criando rotas
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/editpremio/:id",
         element: <EditPremio/>
+      },
+      {
+        path: "/editprojeto/:id",
+        element: <EditProjeto/>
       }
       
   ]
