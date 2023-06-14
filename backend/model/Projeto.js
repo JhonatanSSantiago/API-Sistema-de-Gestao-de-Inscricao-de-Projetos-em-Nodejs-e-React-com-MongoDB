@@ -11,6 +11,9 @@ const projetoSchema = new Schema({
     resumo: {
         type: String
     },
+    premio: {
+        type: mongoose.ObjectId
+    },
     autor: {
         type: mongoose.ObjectId
     },

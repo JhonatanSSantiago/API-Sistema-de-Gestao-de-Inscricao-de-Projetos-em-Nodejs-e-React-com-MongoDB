@@ -42,6 +42,23 @@ const ListProjeto = () => {
     fetchAutores();
   }, [projetos]);
 
+  const [premios, setPremios] = useState({});
+
+  useEffect(() => {
+    const fetchPremios = async () => {
+      for (const projeto of projetos) {
+        const response = await basePathUrl.get(`/premio/${projeto.premio}`);
+        const premio = response.data;
+        setPremios((prevAutores) => ({
+          ...prevAutores,
+          [projeto._id]: premio,
+        }));
+      }
+    };
+
+    fetchPremios();
+  }, [projetos]);
+
   return (
     <div>
       <h1>Projetos</h1>
@@ -51,6 +68,7 @@ const ListProjeto = () => {
             <th>Área</th>
             <th>Título</th>
             <th>Descrição</th>
+            <th>Prêmio</th>
             <th>Autor</th>
             <th>Status</th>
             <th>Data de Envio</th>
@@ -60,7 +78,7 @@ const ListProjeto = () => {
         <tbody>
           {projetos.length === 0 ? (
             <tr>
-              <td colSpan="7">Carregando...</td>
+              <td colSpan="8">Carregando...</td>
             </tr>
           ) : (
             projetos.map((projeto) => (
@@ -68,6 +86,7 @@ const ListProjeto = () => {
                 <td>{projeto.area}</td>
                 <td>{projeto.titulo}</td>
                 <td>{projeto.resumo}</td>
+                <td>{premios[projeto._id] ? premios[projeto._id].nome : "Carregando..."}</td>
                 <td>{autores[projeto._id] ? autores[projeto._id].nome : "Carregando..."}</td>
                 <td>{projeto.status}</td>
                 <td>{projeto.data_envio}</td>

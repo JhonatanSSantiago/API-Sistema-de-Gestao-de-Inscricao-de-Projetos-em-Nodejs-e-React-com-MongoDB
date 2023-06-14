@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 const NewProjeto = () => {
 
-  const navigate = useNavigate()
+    const navigate = useNavigate()
     const dataAtual = new Date();
     const dataFormatada = formatarData(dataAtual);
     const[autores, setAutores] = useState([]);
+    const[premios, setPremios] = useState([]);
     const [area, setArea] = useState()
     const [titulo, setTitulo] = useState()
     const [resumo, setResumo] = useState()
+    const [premio, setPremio] = useState()
     const [autor, setAutor] = useState()
     const [statusprojeto = "Não Avaliado", setStatusProjeto] = useState()
     const [data_envio  = dataFormatada, setData_Envio] = useState()
@@ -18,7 +20,7 @@ const NewProjeto = () => {
     const createProjeto = async (e) => {
       e.preventDefault()
 
-      const projeto = { area, titulo, resumo, autor, statusprojeto, data_envio }
+      const projeto = { area, titulo, resumo, premio, autor, statusprojeto, data_envio }
       console.log(projeto)
   
       await basePathUrl.post("/projeto/", projeto,);
@@ -36,11 +38,25 @@ const NewProjeto = () => {
       } catch (error) {
         console.log(error)
       }
-   }
+    }
+
+    const getPremios = async() => {
+     
+      try {
+        
+        const reponse = await basePathUrl.get("/premio");
+        const data = reponse.data;
+        setPremios(data);
+ 
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
    useEffect(() => {
-    getAutores() 
- }, [])  
+      getAutores()
+      getPremios() 
+    }, [])  
 
 
     function formatarData(data) {
@@ -85,9 +101,18 @@ const NewProjeto = () => {
         <div className="form-control">
           <label htmlFor="resumo">Descrição: </label>
           <textarea type="text" name="resumo" id="resumo" placeholder="Digite uma descricao" onChange={(e) => setResumo(e.target.value)}/>
-        </div> 
+        </div>
         <div className="form-control">
-          <label htmlFor="cars">Autor:</label>
+          <label htmlFor="premio">Premio:</label>
+          <select name="premio" id="premio" onChange={(e) => setPremio(e.target.value)}>
+          <option value=" - "> Selecione um premio </option>
+            {premios.map((premio) => (         
+              <option key={premio._id} value={premio._id}>{premio.nome}</option>
+            ))}          
+          </select>
+        </div>      
+        <div className="form-control">
+          <label htmlFor="autor">Autor:</label>
           <select name="autor" id="autor" onChange={(e) => setAutor(e.target.value)}>
           <option value=" - "> Selecione um autor </option>
             {autores.map((autor) => (         
@@ -95,7 +120,7 @@ const NewProjeto = () => {
             ))}          
           </select>
         </div>     
-        <input className="btn btn-primary" type="submit" value="Cadastrar Prêmio"/>
+        <input className="btn btn-primary" type="submit" value="Enviar Projeto"/>
        </form>
     </div>
   )
