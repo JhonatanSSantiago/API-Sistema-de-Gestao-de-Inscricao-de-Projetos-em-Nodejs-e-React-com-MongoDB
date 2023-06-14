@@ -16,9 +16,5 @@ router.use("/", premioRouter);
 const avaliadorRouter = require("./avaliadorRoute");
 router.use("/", avaliadorRouter);
 
-//Avaliacao router
-const avaliacaoRouter = require("./avaliacaoRoute");
-router.use("/", avaliacaoRouter);
-
 
 module.exports = router;
