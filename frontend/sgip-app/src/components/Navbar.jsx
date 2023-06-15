@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
       <nav className="navbar navbar-expand-lg bg-dark text-light">
         <div className="container-fluid">     
-          <Link className="navbar-brand" to={'/'}>SGIP</Link>
+          <Link className="navbar-brand text-white" to={'/'}>SGIP</Link>
             <ul className="nav nav-underline">
               <li className="nav-item">
                 <Link className="nav-link text-primary" to={'/'}>Home</Link>
