@@ -20,7 +20,7 @@ const MaioresNotas = () => {
     try {
       const response = await basePathUrl.delete(`projeto/${id}`);
       const responseData = response.data;
-      alert(responseData)
+      alert("Excluido")
       const filteredProjetos = projetos.filter((projeto) => projeto._id !== id);  
       setProjetos(filteredProjetos);
       

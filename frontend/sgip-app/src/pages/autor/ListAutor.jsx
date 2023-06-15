@@ -17,6 +17,7 @@ const ListAutor = () => {
 
   const deleteAutor = async (id) => {
     await basePathUrl.delete(`/autor/${id}`);
+    alert("Excluido")
     const filteredAutores = autores.filter((autor) => autor._id !== id);
     setAutores(filteredAutores);
   };

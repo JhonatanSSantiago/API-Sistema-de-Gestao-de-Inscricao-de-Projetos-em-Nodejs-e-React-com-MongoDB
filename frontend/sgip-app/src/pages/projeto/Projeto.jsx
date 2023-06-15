@@ -68,7 +68,7 @@ const Projeto = () => {
     try {
         const response = await basePathUrl.delete(`projeto/${id}`);
         const responseData = response.data;
-        alert(responseData)   
+        alert("Excluido") 
         navigate("/listprojeto")
     } catch (error) {
       console.error(error);

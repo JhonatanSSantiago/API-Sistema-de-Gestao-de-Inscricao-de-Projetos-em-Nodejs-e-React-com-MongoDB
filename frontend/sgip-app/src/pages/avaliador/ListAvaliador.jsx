@@ -17,7 +17,7 @@ const ListAvaliador = () => {
 
   const deleteAvaliador = async (id) => {
     await basePathUrl.delete(`/avaliador/${id}`);
-
+    alert("Excluido")
     const filteredAvaliadores = avaliadores.filter(
       (avaliador) => avaliador._id !== id
     );

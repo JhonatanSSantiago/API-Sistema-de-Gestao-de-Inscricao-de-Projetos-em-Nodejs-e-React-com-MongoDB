@@ -17,6 +17,7 @@ const ListPremio = () => {
 
   const deletePremio = async (id) => {
     await basePathUrl.delete(`/premio/${id}`);
+    alert("Excluido")
     const filteredPremios = premios.filter((premio) => premio._id !== id);
     setPremios(filteredPremios);
   };
