@@ -80,7 +80,18 @@ const projetoController = {
         }catch (error) {
             console.log("Erro: "+ error);
         }
+    },
+  
+    getProjetosPorNotaMaior: async (req, res) => {
+        try {
+          const projetos = await ProjetoModel.find({ nota: { $exists: true, $nin: ["", null] } }).sort({ nota: -1 });
+          res.json(projetos);
+        } catch (error) {
+          console.log("Erro: " + error);
+          res.status(500).json({ error: "Erro ao buscar projetos" });
+        }
     }
+
 };
 
 module.exports = projetoController;

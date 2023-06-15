@@ -12,4 +12,8 @@ router.route("/projeto/:id").delete((req, res) => projetoController.delete(req, 
 
 router.route("/projeto/:id").put((req, res) => projetoController.update(req, res));
 
+router.route("/projeto/maioresnotas").get((req, res) => projetoController.getProjetosPorNotaMaior(req, res));
+
+
+
 module.exports = router;
