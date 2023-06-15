@@ -16,9 +16,17 @@ const ListProjeto = () => {
   };
 
   const deleteProjeto = async (id) => {
-    await basePathUrl.delete(`projeto/${id}`);
-    const filteredProjetos = projetos.filter((projeto) => projeto._id !== id);
-    setProjetos(filteredProjetos);
+    try {
+      const response = await basePathUrl.delete(`projeto/${id}`);
+      const responseData = response.data;
+      alert(responseData)
+      const filteredProjetos = projetos.filter((projeto) => projeto._id !== id);  
+      setProjetos(filteredProjetos);
+      
+    } catch (error) {
+      console.error(error);
+    }
+    
   };
 
   useEffect(() => {
@@ -30,15 +38,26 @@ const ListProjeto = () => {
   useEffect(() => {
     const fetchAutores = async () => {
       for (const projeto of projetos) {
-        const response = await basePathUrl.get(`/autor/${projeto.autor}`);
-        const autor = response.data;
-        setAutores((prevAutores) => ({
-          ...prevAutores,
-          [projeto._id]: autor,
-        }));
+        try {
+          if (projeto.autor) {
+            const response = await basePathUrl.get(`/autor/${projeto.autor}`);
+            const autor = response.data;
+            setAutores((prevAutores) => ({
+              ...prevAutores,
+              [projeto._id]: autor,
+            }));
+          } else {
+            setAutores((prevAutores) => ({
+              ...prevAutores,
+              [projeto._id]: { nome: "Autor Desconhecido" },
+            }));
+          }
+        } catch (error) {
+          console.log(error);
+        }
       }
     };
-
+  
     fetchAutores();
   }, [projetos]);
 
@@ -47,18 +66,28 @@ const ListProjeto = () => {
   useEffect(() => {
     const fetchPremios = async () => {
       for (const projeto of projetos) {
-        const response = await basePathUrl.get(`/premio/${projeto.premio}`);
-        const premio = response.data;
-        setPremios((prevAutores) => ({
-          ...prevAutores,
-          [projeto._id]: premio,
-        }));
+        try {
+          if (projeto.premio) {
+            const response = await basePathUrl.get(`/premio/${projeto.premio}`);
+            const premio = response.data;
+            setPremios((prevPremios) => ({
+              ...prevPremios,
+              [projeto._id]: premio,
+            }));
+          } else {
+            setPremios((prevPremios) => ({
+              ...prevPremios,
+              [projeto._id]: { nome: "Sem Prêmio" },
+            }));
+          }
+        } catch (error) {
+          console.log(error);
+        }
       }
     };
-
+  
     fetchPremios();
   }, [projetos]);
-
   return (
     <div>
       <h1>Projetos</h1>
@@ -78,7 +107,7 @@ const ListProjeto = () => {
         <tbody>
           {projetos.length === 0 ? (
             <tr>
-              <td colSpan="8">Carregando...</td>
+              <td colSpan="8">Nenhum Projeto Enviado</td>
             </tr>
           ) : (
             projetos.map((projeto) => (
@@ -86,8 +115,8 @@ const ListProjeto = () => {
                 <td>{projeto.area}</td>
                 <td>{projeto.titulo}</td>
                 <td>{projeto.resumo}</td>
-                <td>{premios[projeto._id] ? premios[projeto._id].nome : "Carregando..."}</td>
-                <td>{autores[projeto._id] ? autores[projeto._id].nome : "Carregando..."}</td>
+                <td>{premios[projeto._id] ? premios[projeto._id].nome : "Premio Desconhecido"}</td>
+                <td>{autores[projeto._id] ? autores[projeto._id].nome : "Autor Desconhecido"}</td>
                 <td>{projeto.status}</td>
                 <td>{projeto.data_envio}</td>
                 <td>

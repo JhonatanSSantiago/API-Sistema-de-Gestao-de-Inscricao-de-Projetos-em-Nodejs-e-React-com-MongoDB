@@ -20,6 +20,9 @@ import EditAvaliador from "./pages/avaliador/EditAvaliador";
 import EditPremio from "./pages/premio/EditPremio";
 import EditProjeto from "./pages/projeto/EditProjeto";
 import AvaliarProjeto from "./pages/projeto/AvaliarProjeto";
+import ListProjetosAvaliados from "./pages/projeto/ListProjetosAvaliados";
+import ListProjetosNaoAvaliados from "./pages/projeto/ListProjetosNaoAvaliados";
+import MaioresNotas from "./pages/projeto/MaioresNotas";
 import "./index.css";
 
 //criando rotas
@@ -86,6 +89,18 @@ const router = createBrowserRouter([
       {
         path: "/avaliarprojeto/:id",
         element: <AvaliarProjeto/>
+      },
+      {
+        path: "/projetosavaliados",
+        element: <ListProjetosAvaliados/>
+      },
+      {
+        path: "/projetosnaoavaliados",
+        element: <ListProjetosNaoAvaliados/>
+      },
+      {
+        path: "/notas",
+        element: <MaioresNotas/>
       }
       
   ]

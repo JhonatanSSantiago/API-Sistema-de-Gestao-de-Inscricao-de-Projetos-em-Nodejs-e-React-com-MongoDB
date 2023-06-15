@@ -25,36 +25,55 @@ const Projeto = () => {
 
   const getAutor = async (autorId) => {
     try {
-      const response = await basePathUrl.get(`/autor/${autorId}`);
-      const autorData = response.data;
-      setAutor(autorData);
+      if (autorId) {
+        const response = await basePathUrl.get(`/autor/${autorId}`);
+        const autorData = response.data;
+        setAutor(autorData);
+      } else {
+        setAutor({ nome: "Autor Desconhecido" });
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
+  
   const getPremio = async (premioId) => {
     try {
-      const response = await basePathUrl.get(`/premio/${premioId}`);
-      const premioData = response.data;
-      setPremio(premioData);
+      if (premioId) {
+        const response = await basePathUrl.get(`/premio/${premioId}`);
+        const premioData = response.data;
+        setPremio(premioData);
+      } else {
+        setPremio({ nome: "Sem Prêmio" });
+      }
     } catch (error) {
       console.log(error);
     }
   };
+  
   const getAvaliador = async (avaliadorId) => {
     try {
-      const response = await basePathUrl.get(`/avaliador/${avaliadorId}`);
-      const avaliadorData = response.data;
-      setAvaliador(avaliadorData);
+      if (avaliadorId) {
+        const response = await basePathUrl.get(`/avaliador/${avaliadorId}`);
+        const avaliadorData = response.data;
+        setAvaliador(avaliadorData);
+      } else {
+        setAvaliador({ nome: "Avaliador Desconhecido" });
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
   const deleteProjeto = async (id) => {
-    await basePathUrl.delete(`projeto/${id}`);
-    navigate("/listprojeto")
+    try {
+        const response = await basePathUrl.delete(`projeto/${id}`);
+        const responseData = response.data;
+        alert(responseData)   
+        navigate("/listprojeto")
+    } catch (error) {
+      console.error(error);
+    }
+    
   };
 
   useEffect(() => {

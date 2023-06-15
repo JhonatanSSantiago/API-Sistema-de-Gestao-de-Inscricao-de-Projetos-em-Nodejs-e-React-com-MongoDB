@@ -43,7 +43,7 @@ const ListAutor = () => {
         <tbody>
           {autores.length === 0 ? (
             <tr>
-              <td colSpan="7">Carregando...</td>
+              <td colSpan="7">Nenhum Autor Cadastrado</td>
             </tr>
           ) : (
             autores.map((autor) => (

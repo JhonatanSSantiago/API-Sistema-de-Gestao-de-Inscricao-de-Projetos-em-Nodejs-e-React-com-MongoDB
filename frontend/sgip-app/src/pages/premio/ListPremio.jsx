@@ -45,7 +45,7 @@ const ListPremio = () => {
         <tbody>
           {premios.length === 0 ? (
             <tr>
-              <td colSpan="9">Carregando...</td>
+              <td colSpan="9">Nenhum Premio Cadastrado</td>
             </tr>
           ) : (
             premios.map((premio) => (

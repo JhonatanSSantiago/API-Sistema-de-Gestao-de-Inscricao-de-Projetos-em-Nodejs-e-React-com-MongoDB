@@ -21,8 +21,7 @@ const NewProjeto = () => {
       e.preventDefault()
 
       const projeto = { area, titulo, resumo, premio, autor, statusprojeto, data_envio }
-      console.log(projeto)
-  
+    
       await basePathUrl.post("/projeto/", projeto,);
       navigate("/listprojeto")
     }

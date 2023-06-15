@@ -47,7 +47,7 @@ const ListAvaliador = () => {
         <tbody>
           {avaliadores.length === 0 ? (
             <tr>
-              <td colSpan="7">Carregando...</td>
+              <td colSpan="7">Nenhum Avaliador Cadastrado</td>
             </tr>
           ) : (
             avaliadores.map((avaliador) => (
