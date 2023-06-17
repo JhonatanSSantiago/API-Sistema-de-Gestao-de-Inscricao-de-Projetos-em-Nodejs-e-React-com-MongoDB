@@ -30,8 +30,9 @@ const Home = () => {
           <div className="col-2">
                 <Link className="nav-link text-primary" to={'/projetosavaliados'}>Projetos Avaliados</Link>
                 <Link className="nav-link text-primary" to={'/projetosnaoavaliados'} >Projetos Não Avaliados</Link>
+          </div>
+          <div className="col-2">
                 <Link className="nav-link text-primary" to={'/notas'}>Projetos Com Maiores Notas</Link>
-
           </div>
           
         </div>
