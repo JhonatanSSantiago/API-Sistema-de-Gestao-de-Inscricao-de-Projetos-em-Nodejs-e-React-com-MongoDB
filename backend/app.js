@@ -7,18 +7,17 @@ app.use(express.json());
 
 //DB Connect
 const conn = require("./db/conn");
-try {
-    conn().then(() => {
-        app.listen(3000, function(){
-            console.log("Servidor Online!");
-        });
-    })
-} catch (error) {
-    console.log("Erro ao conectar no banco: "+error)
-}
+conn()
+  .then(() => {
+    app.listen(3000, function() {
+      console.log("Servidor Online!");
+    });
+  })
+  .catch((error) => {
+    console.log("Erro ao conectar no banco: " + error);
+  });
 
 // Routes
 const routes = require("./routes/router");
 
 app.use('/api', routes);
-
